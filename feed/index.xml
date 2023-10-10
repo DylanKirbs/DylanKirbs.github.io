@@ -12,7 +12,7 @@
 	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description></description>
-	<lastBuildDate>Tue, 10 Oct 2023 18:21:10 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 10 Oct 2023 20:13:39 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,9 +28,45 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>How we got here</title>
+		<link>/how-we-got-here/</link>
+					<comments>/how-we-got-here/#respond</comments>
+		
+		<dc:creator><![CDATA[dylankirbs365]]></dc:creator>
+		<pubDate>Tue, 10 Oct 2023 20:08:35 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=34</guid>
+
+					<description><![CDATA[As mentioned in my previous post (starting off), this isn&#8217;t my first website. Nor, do I expect will it be the last. Now, I must disclaim that web development is not my strong suite, but I am extremely adaptive and resourceful. My previous site was hosted on GitHub pages, so I was fairly familiar with [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>As mentioned in my previous post (<a href="/starting-off/" data-type="post" data-id="30">starting off</a>), this isn&#8217;t my first website. Nor, do I expect will it be the last. Now, I must disclaim that web development is not my strong suite, but I am extremely adaptive and resourceful.</p>
+
+
+
+<p>My previous site was hosted on GitHub pages, so I was fairly familiar with what was involved, but I was using Jekyll to build the site from Markdown documents. The biggest challenge for me was getting the style right, and I couldn&#8217;t quite figure it out. This frustration let me to look for something different.</p>
+
+
+
+<p>I have a background in WordPress, doing work for a non-profit organisation based out of Cape Town, South Africa. So I decided that it would be an easy enough way for me to start my endeavour. But I still wanted to host it on GitHub pages. I don&#8217;t know why I decided this, but I did.</p>
+
+
+
+<p>So here we are, a WordPress site that has been statically generated and pushed to a GitHub repository.</p>
+
+
+
+<figure class="wp-block-pullquote"><blockquote><p>If you think math is hard, try web design.</p><cite>Trish Parr</cite></blockquote></figure>
+]]></content:encoded>
+					
+					<wfw:commentRss>/how-we-got-here/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
 		<title>Starting Off</title>
 		<link>/starting-off/</link>
-					<comments>/starting-off/#respond</comments>
+					<comments>/starting-off/#comments</comments>
 		
 		<dc:creator><![CDATA[dylankirbs365]]></dc:creator>
 		<pubDate>Tue, 10 Oct 2023 18:21:10 +0000</pubDate>
@@ -48,10 +84,14 @@
 
 
 <p>So here&#8217;s to the first post, the stepping stone into a new adventure.</p>
+
+
+
+<figure class="wp-block-pullquote"><blockquote><p>pro⋅gram⋅mer</p><cite><em>n.</em> an organism that turns caffeine into software</cite></blockquote></figure>
 ]]></content:encoded>
 					
 					<wfw:commentRss>/starting-off/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
+			<slash:comments>1</slash:comments>
 		
 		
 			</item>

@@ -11,11 +11,25 @@
 	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description></description>
-	<lastBuildDate>Tue, 10 Oct 2023 18:21:10 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 10 Oct 2023 20:13:39 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.3.1</generator>
-</channel>
+	<item>
+		<title>
+		Comment on Starting Off by How we got here &#8211; Home		</title>
+		<link>/starting-off/#comment-2</link>
+
+		<dc:creator><![CDATA[How we got here &#8211; Home]]></dc:creator>
+		<pubDate>Tue, 10 Oct 2023 20:08:44 +0000</pubDate>
+		<guid isPermaLink="false">/?p=30#comment-2</guid>
+
+					<description><![CDATA[[&#8230;] mentioned in my previous post (starting off), this isn&#8217;t my first website. Nor, do I expect will it be the last. Now, I must disclaim [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] mentioned in my previous post (starting off), this isn&#8217;t my first website. Nor, do I expect will it be the last. Now, I must disclaim [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
 </rss>
