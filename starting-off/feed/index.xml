@@ -7,9 +7,9 @@
 	>
 <channel>
 	<title>
-	Comments for Home	</title>
-	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	Comments on: Starting Off	</title>
+	<atom:link href="/starting-off/feed/" rel="self" type="application/rss+xml" />
+	<link>/starting-off/</link>
 	<description></description>
 	<lastBuildDate>Tue, 10 Oct 2023 18:21:10 +0000</lastBuildDate>
 	<sy:updatePeriod>

@@ -8,34 +8,50 @@
 	>
 
 <channel>
-	<title>Uncategorized &#8211; DylanKirbs.github.io</title>
+	<title>Uncategorized &#8211; Home</title>
 	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description></description>
-	<lastBuildDate>Tue, 10 Oct 2023 14:30:02 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 10 Oct 2023 18:21:10 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.3.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2023/10/Logo-1-150x150.png</url>
+	<title>Uncategorized &#8211; Home</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
 	<item>
-		<title>Hello world!</title>
-		<link>/hello-world/</link>
-					<comments>/hello-world/#comments</comments>
+		<title>Starting Off</title>
+		<link>/starting-off/</link>
+					<comments>/starting-off/#respond</comments>
 		
 		<dc:creator><![CDATA[dylankirbs365]]></dc:creator>
-		<pubDate>Tue, 10 Oct 2023 14:30:02 +0000</pubDate>
+		<pubDate>Tue, 10 Oct 2023 18:21:10 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=1</guid>
+		<guid isPermaLink="false">/?p=30</guid>
 
-					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
+					<description><![CDATA[There is no better time than the present to get started with something you&#8217;ve been putting off. So here we are&#8230; I&#8217;ve completely redone my personal website. I think it&#8217;s always a good thing to have a personal brand. What better way to present yourself in the modern day and age than with a personal [&#8230;]]]></description>
 										<content:encoded><![CDATA[
-<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+<p>There is no better time than the present to get started with something you&#8217;ve been putting off. So here we are&#8230; I&#8217;ve completely redone my personal website. </p>
+
+
+
+<p>I think it&#8217;s always a good thing to have a personal brand. What better way to present yourself in the modern day and age than with a personal website.</p>
+
+
+
+<p>So here&#8217;s to the first post, the stepping stone into a new adventure.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/hello-world/feed/</wfw:commentRss>
-			<slash:comments>1</slash:comments>
+					<wfw:commentRss>/starting-off/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
 		
 		
 			</item>
