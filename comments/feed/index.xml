@@ -10,13 +10,13 @@
 	Comments for Home	</title>
 	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
-	<description></description>
-	<lastBuildDate>Tue, 10 Oct 2023 20:13:39 +0000</lastBuildDate>
+	<description>a site about me</description>
+	<lastBuildDate>Wed, 18 Oct 2023 09:02:52 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.3.1</generator>
+	<generator>https://wordpress.org/?v=6.3.2</generator>
 	<item>
 		<title>
 		Comment on Starting Off by How we got here &#8211; Home		</title>
