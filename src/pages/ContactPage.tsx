@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Button } from '../components/ui';
 import { personalInfo, socialLinks } from '../data/portfolio';
-import { FaMailBulk } from 'react-icons/fa';
 
 export const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -33,7 +32,8 @@ export const ContactPage: React.FC = () => {
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h1>
                     <p className="text-xl text-gray-300">
-                        Have a project in mind? I'd love to hear from you.
+                        Want to get in touch? Whether you have a question, a cool idea, or just want to say hello,
+                        feel free to drop me a message!
                     </p>
                 </div>
 
@@ -54,7 +54,7 @@ export const ContactPage: React.FC = () => {
                                     onChange={handleChange}
                                     required
                                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                                    placeholder="John Doe"
+                                    placeholder="Your full name"
                                 />
                             </div>
 
@@ -70,7 +70,7 @@ export const ContactPage: React.FC = () => {
                                     onChange={handleChange}
                                     required
                                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                                    placeholder="john@example.com"
+                                    placeholder="your.email@company.com"
                                 />
                             </div>
 
@@ -86,7 +86,7 @@ export const ContactPage: React.FC = () => {
                                     required
                                     rows={6}
                                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-vertical"
-                                    placeholder="Tell me about your project..."
+                                    placeholder="Share your thoughts or questions..."
                                 />
                             </div>
 
@@ -107,25 +107,7 @@ export const ContactPage: React.FC = () => {
                         </div>
 
                         <div className="space-y-6">
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-blue-600/20 p-3 rounded-lg">
-                                    <FaMailBulk className="w-6 h-6 text-blue-400" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold mb-1">Email</h3>
-                                    <a
-                                        href={`mailto:${personalInfo.email}`}
-                                        className="text-blue-400 hover:text-blue-300 transition-colors"
-                                    >
-                                        {personalInfo.email}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="pt-8 border-t border-gray-700">
-                            <h3 className="font-semibold mb-4">Connect with me</h3>
-                            <div className="flex space-x-4">
+                            <div className="flex items-center space-x-4">
                                 {socialLinks.map((link) => (
                                     <a
                                         key={link.platform}
@@ -133,12 +115,14 @@ export const ContactPage: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="bg-gray-700 hover:bg-gray-600 p-3 rounded-lg transition-colors"
+                                        title={link.platform}
                                     >
                                         <link.icon className="w-6 h-6 text-blue-400" />
                                     </a>
                                 ))}
                             </div>
                         </div>
+
                     </div>
                 </div>
             </Container>

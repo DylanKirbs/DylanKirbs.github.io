@@ -35,13 +35,25 @@ export const ProjectsPage: React.FC = () => {
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.technologies.map((tech) => (
                                         <span
-                                            key={tech}
-                                            className="bg-blue-600/20 text-blue-300 border border-blue-600/30 px-3 py-1 rounded-full text-sm"
+                                            key={tech.name}
+                                            className="relative group bg-blue-600/20 text-blue-300 border border-blue-600/30 px-3 py-1 rounded-full text-sm hover:border-blue-500 transition-colors cursor-help"
+                                            title={tech.description}
                                         >
-                                            {tech}
+                                            {tech.name}
+
+
+                                            {tech.description && (
+                                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-gray-100 text-xs rounded-lg border border-gray-700 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                                                    <div className="font-semibold text-blue-300 mb-1">{tech.name} {tech.level && (<>| {tech.level}</>)}</div>
+                                                    <div className="leading-relaxed">{tech.description}</div>
+                                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-900"></div>
+                                                </div>
+                                            )}
                                         </span>
                                     ))}
                                 </div>
+
+
                             </div>
 
                             <div className="flex gap-4 mt-auto">
