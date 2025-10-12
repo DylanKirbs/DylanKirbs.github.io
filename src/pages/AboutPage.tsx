@@ -1,5 +1,5 @@
 import React from 'react';
-import { personalInfo, socialLinks } from '../data/portfolio';
+import { personalInfo } from '../data/portfolio';
 import { Container } from '../components/ui';
 import { Link } from 'react-router-dom';
 
