@@ -3,12 +3,6 @@ import { posts } from '../data/posts';
 import { Link } from 'react-router-dom';
 
 export const BlogPage: React.FC = () => {
-    // Sort posts by date (newest first)
-    const sortedPosts = [...posts].sort((a, b) => {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-        return dateB.getTime() - dateA.getTime();
-    });
 
     return (
         <div className="min-h-screen bg-gray-900 text-white">
@@ -22,7 +16,7 @@ export const BlogPage: React.FC = () => {
                     </p>
 
                     <div className="grid gap-8 md:gap-12">
-                        {sortedPosts.map((post, index) => (
+                        {posts.map((post, index) => (
                             <article
                                 key={index}
                                 className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
@@ -35,7 +29,11 @@ export const BlogPage: React.FC = () => {
                                             </h2>
                                         </Link>
                                         <span className="text-gray-400 text-sm md:text-base">
-                                            {post.date}
+                                            {post.date.toLocaleDateString('en-ZA', {
+                                                day: 'numeric',
+                                                month: 'long',
+                                                year: 'numeric',
+                                            })}
                                         </span>
                                     </div>
 

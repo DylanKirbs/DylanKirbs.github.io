@@ -1,0 +1,48 @@
+---
+title: "How we got here"
+slug: "how-we-got-here"
+date: "2025-10-12T23:30"
+excerpt: "A technical breakdown of the slightly less straightforward processes of building this site."
+tags: ["technical", "react", "MDX"]
+readTimeMins: 2
+---
+
+As you might have guessed from my previous post, I recently rebuilt my personal website from the ground up. This post is a bit of a behind-the-scenes look at how I did it, and some of the tools and techniques I used along the way.
+
+Most of the site is fairly straightforward React with TypeScript, but there are a few interesting bits that I thought were worth mentioning.
+
+## MDX for Content
+
+I wanted to be able to write my posts in Markdown, but I also wanted to be able to include React components in my posts. MDX is a great solution for this, as it allows you to write Markdown and include React components seamlessly. So an obvious first choice was to use a nice build system like `Astro`, but I wanted more control and I'm not too familiar with it yet, so I went with a custom setup.
+
+This meant setting up a build process to convert my MDX files into React components. I used `@mdx-js/mdx` for this, which is a great library for compiling MDX to JSX. I wrote a simple Node.js script that reads all the MDX files in my `src/posts` directory, compiles them to JSX, and then writes them to a `src/components/posts` directory as React components.
+
+Now I can simply run a build script (`npm run build:posts`) to regenerate my posts whenever I add or update a post.
+
+## Features
+
+I obviously could not pass up on the opportunity to build in a syntax highlighter using `react-syntax-highlighter` and `prismjs`.
+
+```python
+def foo(bar):
+    return bar + 1
+```
+
+```rust
+fn foo(bar: i32) -> i32 {
+    bar + 1
+}
+```
+
+And some sensible default styles for the MDX pages so I can do stuff like `**bold**` , `*italic*`, and `> blockquotes` without having to think about it.
+
+> Some **bold** and *italic* text in a blockquote
+
+## Future Improvements
+
+There are a few things I want to improve in the future:
+- **SEO**: I want to improve the SEO of the site, maybe by adding a sitemap and better meta tags.
+- **Performance**: I want to optimize the performance of the site, maybe by adding lazy loading for images and code splitting.
+- **More Features**: I want to add more features to the site, like a search function and a way to filter posts by tag.
+
+Overall, I'm pretty happy with how the site turned out. It was a fun project to work on, and I learned a lot along the way. If you're interested in the code, it's all available on [GitHub](https://github.com/DylanKirbs/dylankirbs.github.io). And all of this was built in one day!

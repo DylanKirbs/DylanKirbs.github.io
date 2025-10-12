@@ -25,6 +25,7 @@ export const BlogPost: React.FC = () => {
         );
     }
 
+    const { content: Content } = post;
     return (
         <div className="min-h-screen bg-gray-900 text-white">
             <div className="container mx-auto px-4 py-16">
@@ -45,7 +46,11 @@ export const BlogPost: React.FC = () => {
 
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                                     <span className="text-gray-400 mb-2 md:mb-0">
-                                        {post.date}
+                                        {post.date.toLocaleDateString('en-ZA', {
+                                            day: 'numeric',
+                                            month: 'long',
+                                            year: 'numeric',
+                                        })}
                                     </span>
                                     {post.readTimeMins && (
                                         <span className="text-gray-400 text-sm">
@@ -68,8 +73,8 @@ export const BlogPost: React.FC = () => {
                                 )}
                             </header>
 
-                            <div className="text-gray-200 leading-relaxed">
-                                {post.content}
+                            <div className="text-gray-200 leading-relaxed prose prose-invert max-w-none">
+                                <Content />
                             </div>
                         </div>
                     </article>
