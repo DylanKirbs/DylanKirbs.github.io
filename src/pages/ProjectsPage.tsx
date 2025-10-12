@@ -76,7 +76,7 @@ export const ProjectsPage: React.FC = () => {
                         Want to see more of my work or collaborate on a project?
                     </p>
                     <a
-                        href="https://github.com/yourusername"
+                        href="https://github.com/DylanKirbs"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-gray-800 hover:bg-gray-700 border border-gray-600 px-8 py-3 rounded-lg font-semibold transition-colors"
