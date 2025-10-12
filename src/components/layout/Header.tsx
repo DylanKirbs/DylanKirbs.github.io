@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { personalInfo, navigationItems } from '../../data/portfolio';
+import { personalInfo } from '../../data/portfolio';
+import { navigationItems } from '../../App';
 
 export const Header: React.FC = () => {
     const location = useLocation();
@@ -22,8 +23,8 @@ export const Header: React.FC = () => {
                                 key={item.path}
                                 to={item.path}
                                 className={`transition-colors ${location.pathname === item.path
-                                        ? 'text-blue-400'
-                                        : 'text-gray-300 hover:text-blue-400'
+                                    ? 'text-blue-400'
+                                    : 'text-gray-300 hover:text-blue-400'
                                     }`}
                             >
                                 {item.name}

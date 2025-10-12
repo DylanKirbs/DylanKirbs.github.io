@@ -1,13 +1,6 @@
 import type { IconType } from 'react-icons';
 import { FaGithub, FaLinkedin, FaMailBulk } from 'react-icons/fa';
 
-// --- Navigation Items ---
-export const navigationItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' }
-];
 
 // --- Skills ---
 export interface Skill {
