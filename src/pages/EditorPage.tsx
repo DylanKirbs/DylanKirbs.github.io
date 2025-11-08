@@ -33,9 +33,9 @@ import { languages } from '@codemirror/language-data';
 import { syntaxHighlighting, HighlightStyle } from '@codemirror/language';
 import { tags } from '@lezer/highlight';
 
-// Custom CodeMirror theme for markdown syntax highlighting
+
 const markdownHighlightStyle = HighlightStyle.define([
-    { tag: tags.heading, color: '#93c5fd', fontWeight: 'bold' },
+    { tag: tags.heading, color: '#93c5fd', fontWeight: 'bold', fontSize: '1.2em' },
     { tag: tags.strong, color: '#fbbf24', fontWeight: 'bold' },
     { tag: tags.emphasis, color: '#a78bfa', fontStyle: 'italic' },
     { tag: tags.link, color: '#60a5fa' },
