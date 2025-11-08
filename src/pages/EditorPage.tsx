@@ -327,7 +327,7 @@ ${mdxContent}`;
                     </div>
 
                     {/* MDXEditor */}
-                    <div className="bg-gray-800 rounded-lg overflow-hidden mdx-editor-dark" style={{ height: '600px' }}>
+                    <div className="bg-gray-800 rounded-lg overflow-hidden mdx-editor-dark">
                         <MDXEditor
                             key={editorKey}
                             markdown={mdxContent}
