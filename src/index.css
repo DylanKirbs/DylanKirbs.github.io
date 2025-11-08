@@ -195,7 +195,7 @@
   color: #f3f4f6 !important;
 }
 
-/* CodeMirror syntax highlighting for markdown in source mode */
+/* CodeMirror editor chrome (non-syntax styling) */
 .mdx-editor-dark .cm-editor .cm-gutters {
   background-color: #0f172a !important;
   border-right: 1px solid #374151 !important;
@@ -215,80 +215,6 @@
   background-color: rgba(55, 65, 81, 0.3) !important;
 }
 
-/* Markdown syntax colors in source mode */
-.mdx-editor-dark .cm-editor .cm-header {
-  color: #93c5fd !important;
-  font-weight: bold !important;
-  font-size: 1.15em !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-strong {
-  color: #fbbf24 !important;
-  font-weight: bold !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-emphasis {
-  color: #a78bfa !important;
-  font-style: italic !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-link {
-  color: #60a5fa !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-url {
-  color: #34d399 !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-quote {
-  color: #d1d5db !important;
-  font-style: italic !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-quote * {
-  color: #d1d5db !important;
-}
-
-/* Override CodeMirror token classes inside quotes to ensure light color */
-.mdx-editor-dark .cm-editor .cm-line .cm-quote span {
-  color: #d1d5db !important;
-}
-
-/* Code blocks in CodeMirror */
-.mdx-editor-dark .cm-editor .cm-codeBlock {
-  background-color: #111827 !important;
-  font-family: 'Courier New', monospace !important;
-}
-
-/* Code fence markers (```) */
-.mdx-editor-dark .cm-editor .tok-codeMark {
-  color: #6b7280 !important;
-}
-
-.mdx-editor-dark .cm-editor .tok-meta {
-  color: #9ca3af !important;
-}
-
-/* Inline code */
-.mdx-editor-dark .cm-editor .cm-inlineCode {
-  background-color: #374151 !important;
-  color: #fbbf24 !important;
-  padding: 0.1em 0.3em !important;
-  border-radius: 0.25rem !important;
-}
-
-.mdx-editor-dark .cm-editor .tok-monospace {
-  background-color: #374151 !important;
-  color: #fbbf24 !important;
-  padding: 0.1em 0.3em !important;
-  border-radius: 0.25rem !important;
-}
-
-/* List markers */
-.mdx-editor-dark .cm-editor .cm-list {
-  color: #93c5fd !important;
-}
-
 /* Selection */
 .mdx-editor-dark .cm-editor .cm-selectionBackground {
   background-color: #3b82f6 !important;
@@ -301,34 +227,4 @@
 /* Cursor */
 .mdx-editor-dark .cm-editor .cm-cursor {
   border-left-color: #f3f4f6 !important;
-}
-
-/* CodeMirror code blocks with syntax highlighting */
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-keyword {
-  color: #c678dd !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-string {
-  color: #98c379 !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-comment {
-  color: #5c6370 !important;
-  font-style: italic !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-number {
-  color: #d19a66 !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-function {
-  color: #61afef !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-variable {
-  color: #e06c75 !important;
-}
-
-.mdx-editor-dark .cm-editor .cm-codeBlock .cm-operator {
-  color: #56b6c2 !important;
 }

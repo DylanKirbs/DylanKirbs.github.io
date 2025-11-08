@@ -26,11 +26,24 @@ import {
     InsertTable,
     InsertThematicBreak,
     InsertCodeBlock,
-    DiffSourceToggleWrapper,
 } from '@mdxeditor/editor';
 import '@mdxeditor/editor/style.css';
 import { markdown } from '@codemirror/lang-markdown';
 import { languages } from '@codemirror/language-data';
+import { syntaxHighlighting, HighlightStyle } from '@codemirror/language';
+import { tags } from '@lezer/highlight';
+
+// Custom CodeMirror theme for markdown syntax highlighting
+const markdownHighlightStyle = HighlightStyle.define([
+    { tag: tags.heading, color: '#93c5fd', fontWeight: 'bold' },
+    { tag: tags.strong, color: '#fbbf24', fontWeight: 'bold' },
+    { tag: tags.emphasis, color: '#a78bfa', fontStyle: 'italic' },
+    { tag: tags.link, color: '#60a5fa' },
+    { tag: tags.url, color: '#34d399' },
+    { tag: tags.quote, color: '#d1d5db', fontStyle: 'italic' },
+    { tag: tags.list, color: '#93c5fd' },
+    { tag: tags.monospace, color: '#fbbf24', backgroundColor: '#374151' },
+]);
 
 const defaultContent = `# Welcome to the MDX Editor
 
@@ -358,7 +371,10 @@ ${mdxContent}`;
                                 diffSourcePlugin({
                                     viewMode: 'source',
                                     diffMarkdown: '',
-                                    codeMirrorExtensions: [markdown({ codeLanguages: languages })]
+                                    codeMirrorExtensions: [
+                                        markdown({ codeLanguages: languages }),
+                                        syntaxHighlighting(markdownHighlightStyle)
+                                    ]
                                 }),
                                 toolbarPlugin({
                                     toolbarContents: () => (
