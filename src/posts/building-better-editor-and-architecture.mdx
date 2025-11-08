@@ -1,0 +1,116 @@
+---
+title: "Building Better: Editor & Architecture"
+slug: "building-better-editor-and-architecture"
+date: "2025-11-08"
+excerpt: "A deeper dive into the custom MDX editor and the static build pipeline that power this site's content workflow."
+tags: ["technical", "react", "MDX", "architecture"]
+readTimeMins: 4
+---
+
+
+Continuing from the previous post, this one digs deeper into the technical side of how this site works, particularly the new MDX editor and the build pipeline behind it.
+
+## The Editor
+
+With some help from our friend *Claude*, I built a lightweight markdown editor for writing blog posts. **Why?** Mostly because I could, so **why not?**
+
+I’d built a markdown editor before for a university project, but I no longer have access to that repo. Rather than starting completely from scratch again, I let Claude handle much of the boilerplate while I focused on the structure and workflow integration.
+
+You can try it out [here](/#/editor), though it’s only really useful if you want to create posts for this site’s build system.
+
+### How It Works
+
+The editor is powered by [`@mdxeditor/editor`](https://mdxeditor.dev/), a capable WYSIWYG editor for MDX content. It supports:
+
+* **Live preview** as you type
+* **Syntax highlighting** via CodeMirror
+* **Frontmatter management** with a simple form
+* **Tag input** using comma-separated values
+* **Export to `.mdx`** for local saves
+* **Import support** for editing existing posts
+* **localStorage persistence** to avoid data loss
+
+The editor integrates directly into the build system. You write, export the `.mdx` file to `src/posts/`, run `npm run build:posts`, and the post becomes part of the site.
+
+## Architecture Deep Dive
+
+### The Build Pipeline
+
+The backbone of the content workflow is [`scripts/build-posts.js`](scripts/build-posts.js). When you run `npm run build:posts`, it performs a full compile-time transformation:
+
+1. **Scan** the `src/posts/` directory for `.mdx` files
+2. **Parse** frontmatter with [`gray-matter`](https://github.com/jonschlinkert/gray-matter)
+3. **Compile** MDX to JSX via [`@mdx-js/mdx`](https://mdxjs.com/)
+4. **Emit** React components to [`src/data/compiled-posts/`](src/data/compiled-posts)
+5. **Generate** an index file [`src/data/posts.tsx`](src/data/posts.tsx) containing post metadata
+
+This design means all MDX compilation happens at build time (not in the browser) eliminating runtime overhead.
+
+### Component Overrides
+
+The [`mdxComponents`](src/components/post/PostComponents.tsx) object defines how MDX elements render. Here’s the `code` block override:
+
+```tsx
+export const mdxComponents = {
+    code: (props: any) => {
+        const { children, className } = props;
+        const language = className?.replace('language-', '') || 'text';
+
+        if (!className) {
+            return (
+                <code
+                    className="bg-gray-800 text-gray-200 px-2 py-1 rounded text-sm font-mono"
+                    {...props}
+                />
+            );
+        }
+
+        return (
+            <SyntaxHighlighter
+                language={language}
+                style={oneDark}
+                customStyle={{
+                    margin: '1rem 0',
+                    borderRadius: '0.5rem',
+                    fontSize: '0.875rem'
+                }}
+            >
+                {children}
+            </SyntaxHighlighter>
+        );
+    },
+    // ...other overrides
+};
+```
+
+This ensures consistent syntax highlighting and styling across all posts.
+
+### Routing Strategy
+
+Because the site is hosted on GitHub Pages, it uses [`HashRouter`](src/App.tsx) instead of `BrowserRouter`. That’s why URLs look like `/#/about` instead of `/about`. The trade-off is worth it for predictable routing without needing server configuration.
+
+A small redirect hack in [`public/404.html`](public/404.html) and [`index.html`](index.html) ensures deep links still work:
+
+```javascript
+// public/404.html
+sessionStorage.redirect = location.href;
+
+// index.html
+var redirect = sessionStorage.redirect;
+delete sessionStorage.redirect;
+if (redirect && redirect !== location.href) {
+    history.replaceState(null, null, redirect);
+}
+```
+
+## What’s Next
+
+Planned improvements include:
+
+* **Client-side search** across posts
+* **Tag filtering** on the blog page
+* **Tag suggestions** in the editor
+* **RSS feed generation** at build time
+* **Improved mobile navigation** (the current header is too desktop-centric)
+
+All the source code is available on [GitHub](https://github.com/DylanKirbs/dylankirbs.github.io) if you want to dig deeper.

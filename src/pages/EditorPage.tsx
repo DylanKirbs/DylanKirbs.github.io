@@ -157,11 +157,11 @@ ${mdxContent}`;
         // Combine frontmatter with content for export, using current date
         const currentDate = new Date().toISOString().split('T')[0];
         const fullContent = `---
-title: ${title}
-slug: ${slug}
-date: ${currentDate}
-excerpt: ${excerpt}
-tags: ${tags.join(', ')}
+title: "${title}"
+slug: "${slug}"
+date: "${currentDate}"
+excerpt: "${excerpt}"
+tags: [${tags.map(tag => `"${tag}"`).join(', ')}]
 readTimeMins: ${readTimeMins}
 ---
 
