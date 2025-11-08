@@ -26,8 +26,11 @@ import {
     InsertTable,
     InsertThematicBreak,
     InsertCodeBlock,
+    DiffSourceToggleWrapper,
 } from '@mdxeditor/editor';
 import '@mdxeditor/editor/style.css';
+import { markdown } from '@codemirror/lang-markdown';
+import { languages } from '@codemirror/language-data';
 
 const defaultContent = `# Welcome to the MDX Editor
 
@@ -311,7 +314,7 @@ ${mdxContent}`;
                     </div>
 
                     {/* MDXEditor */}
-                    <div className="bg-gray-800 rounded-lg overflow-hidden mdx-editor-dark">
+                    <div className="bg-gray-800 rounded-lg overflow-hidden mdx-editor-dark" style={{ height: '600px' }}>
                         <MDXEditor
                             key={editorKey}
                             markdown={mdxContent}
@@ -352,7 +355,11 @@ ${mdxContent}`;
                                         md: 'Markdown',
                                     }
                                 }),
-                                diffSourcePlugin({ viewMode: 'source' }),
+                                diffSourcePlugin({
+                                    viewMode: 'source',
+                                    diffMarkdown: '',
+                                    codeMirrorExtensions: [markdown({ codeLanguages: languages })]
+                                }),
                                 toolbarPlugin({
                                     toolbarContents: () => (
                                         <>
@@ -370,7 +377,7 @@ ${mdxContent}`;
                                     )
                                 })
                             ]}
-                            className="min-h-[70vh]"
+                            className="h-full"
                         />
                     </div>
                 </div>
